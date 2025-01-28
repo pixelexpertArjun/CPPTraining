@@ -1,27 +1,50 @@
 #include <iostream>
 
+using namespace std;
+
 class shape {
 public:
-  int shape_value;
-
-  shape() { shape_value = 50; }
+  int area;
+  shape() {}
+  virtual void calcarea(int area) {}
 };
 
 class circle : public shape {
 private:
-  int circle_value;
+  float area;
 
 public:
   circle(int a);
 
-  circle() { circle_value = shape_value; }
+  circle() {}
 
-  void print_value(void) { std::cout << "value of circle" << shape_value; }
+  void clacarea(int radius) {
+    area = 3.14 * radius * radius;
+    cout << "Area of circle = " << area;
+  }
+
+  // void print_value(void) { std::cout << "value of circle" << shape_value; }
+};
+
+class square : public shape {
+private:
+  float area;
+
+public:
+  square() {}
+
+  void clacarea(int length) {
+    area = length * length;
+    cout << "Area of square = " << area;
+  }
 };
 
 int main() {
   std::cout << "Hello from app2";
 
-  circle print;
-  print.print_value();
+  circle a1;
+  a1.calcarea(9);
+
+  square a2;
+  a2.calcarea(9);
 }
