@@ -1,28 +1,57 @@
 #include <iostream>
 
-class d1 {
-public:
-  int a = 20;
-  d1() {}
-};
 
-class d2 {
+using namespace std;
+class engine {
 public:
-  int b = 10;
-  d2() {}
-};
+  int var_rpm = 1000;
+  engine() {}
 
-class b : public d1, public d2 {
-public:
-  int var_b = 0;
-
-  b() {
-    var_b = a + b;
-    std::cout << "total" << var_b;
+  void print(){
+    cout<<"Engine spec : "<<var_rpm << endl;
   }
 };
 
+class body {
+public:
+  int var_body = 20;
+  int door = 2;
+  body() {}
+
+  void print (){
+    cout<<"Body spec : "<<endl;
+    cout<<"   body : "<<var_body<<endl;
+    cout<<"   door : "<<door<<endl;
+  }
+
+};
+
+class car : public engine, public body {
+public:
+  int var_car = 0;
+
+  car() {
+    var_car = var_body + var_rpm;
+    cout << "total" << var_car;
+
+  }
+
+  void car_spec (){
+
+    cout<<"Total spec : "<<var_car<<endl;
+  }
+  
+};
+
 int main() {
-  b b1;
-  b1;
+  body b; 
+  b.print();
+
+  engine e;
+  e.print();
+
+  car maruthi;
+  maruthi.car_spec();
+
+
 }

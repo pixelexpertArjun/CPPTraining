@@ -7,7 +7,7 @@ CXXFLAGS = -Wall -g
 
 TARGET = inherit
 
-SRCS = main.cpp inherit.cpp
+SRCS = inherit.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET) run
