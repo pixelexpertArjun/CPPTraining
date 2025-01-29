@@ -5,9 +5,9 @@ CXXFLAGS = -Wall -g
 # DEPS = api.h
 # OBJ = hello.o api2.o
 
-TARGET = main
+TARGET = inherit
 
-SRCS = main.cpp
+SRCS = main.cpp inherit.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET) run
