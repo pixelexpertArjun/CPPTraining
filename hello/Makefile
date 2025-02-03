@@ -5,13 +5,12 @@ CXXFLAGS = -Wall -g
 # DEPS = api.h
 # OBJ = hello.o api2.o
 
-TARGET = inherit
+TARGET = oops2
 
-SRCS = inherit.cpp
+SRCS = oops2.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-all: $(TARGET) run
-
+all: $(TARGET) run 
 $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
 
@@ -26,6 +25,9 @@ $(TARGET): $(OBJS)
 
 run: $(TARGET)
 	./$(TARGET)
+
+run_valgrind: $(TARGET)
+	valgrind --leak-check=full ./$(TARGET)
 
 clean:
 	rm $(OBJS) $(TARGET)
