@@ -1,8 +1,8 @@
 CXX = g++
 CXXFLAGS = -Wall -g
-TARGET = sumoftwo
+TARGET = act2
 
-SRCS = sumoftwo.cpp
+SRCS = act2.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET) run 
