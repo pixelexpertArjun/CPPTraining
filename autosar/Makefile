@@ -3,9 +3,9 @@
 CXX = g++
 CXXFLAGS = -Wall -g
 
-TARGET = process_smrtptr
+TARGET = dp_adapter
 
-SRCS = process_smrtptr.cpp
+SRCS = dp_adapter.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET) run 
