@@ -1,8 +1,8 @@
 CXX = g++
 CXXFLAGS = -Wall -g
-TARGET = act2
+TARGET = container
 
-SRCS = act2.cpp
+SRCS = container.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET) run 
