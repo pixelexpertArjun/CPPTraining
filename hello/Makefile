@@ -5,12 +5,12 @@ TARGET = container
 SRCS = container.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-all: $(TARGET) run 
+all: $(TARGET) run_valgrind 
 $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@ 
 
 run: $(TARGET)
 	./$(TARGET)
